@@ -336,20 +336,182 @@ function checkwinner(teamA, teamB) {
     }
 }
 checkwinner(averageDolphin2, avgkaola2);
+//ARROW FUNCTION
+// const name = ()=>{}
+
+const logger = (a, b, c) => {
+    const total = a + b + c;
+    return total;
+
+};
+
+console.log((logger(4, 5, 7)));
+
+// const difference = (a, b) => {
+    // return a - b;
+// };
+const difference = (a, b) => a - b;
+
+console.log(difference(67, 50));
+
+const calcAvg = (a, b, c) => {
+    const avg = (a + b + c) / 3;
+    return Number(avg.toFixed(2));
+};
+
+//VARIABLE SCOPING - global local var
+
+// const myname = "Moyo",
+// console.log(myname);
+// if (true) {
+ //  const surname = "Ayo"; 
+ // const surname = "Wale";
+ // console.log(surname);
+ //console.log("in a block" + mynmae);
+//}
+ 
+
+const surname = "Ade";
+console.log("Outside" + name);
 
 
 
 
+//ARRAYS [element, element, el]
+
+const students = ["mofe", "precious", "sheu"];
+console.log(students);
+//arrays properties and methods
+console.log(students.length);
+
+//get element in arr
+console.log(students[0]);
+console.log(students[students.length - 1]);
 
 
+//converting an array to a string - tstring, join
+console.log(students.toString());
+console.log(students.join(" "));
+//adding elements to sn array - push unshitf
+
+students.push("0la");
+students.push("nike");
+
+students.unshift("Ebuka");
+students.unshift("emma");
+
+console.log(students);
+
+//remove element form an array pop shift
+students.pop();
+students.pop();
+students.pop();
+
+students.shift();
+students.shift();
+console.log(students);
+
+console.log(students.sort());
+console.log(students.reverse());
+console.log(students.includes("Ola"));
+console.log(students.includes("Mofe"));
+
+// inddexof lastindexof
+const anotherStudent = ["toyin", "Zinab"];
+console.log(students.concat(anotherStudent, ["Ayo", "Ade", "Ade"]));
 
 
+// includes, sort, reverse pop, push, shift, unshift,
+//slice, splice, concta, join, toString
+
+console.log(students.slice(0, 2)); // 0, 1
 
 
+const countries = ["Canada", "France", "Germeany", "Dublin"];
+console.log(countries.length);
+countries.length > 5 ? console.log('country.length is greather that 4') : console.log(`is not greater than 5`);
+let savings = 20000;
+const transactions = [5000, -10000, -100];
+
+transactions.push(-2000);
+transactions.push(50000);
+
+transactions.push(-3000);
+transactions.pop();
+console.log(transactions);
+let debit = 0;
+let credit = 0;
+
+for (i = 0; i < transactions.length; i++) {
+   // console.log(transactions[i]);
+    // savings = saving + transaction[i]
+    savings += transactions[i];
+    if (transactions[i] < 0) {
+        debit += transactions[i];
+        console.log(`you have been debited ${transactions[i]}`);
+    } else {
+        credit += transactions[i];
+        console.log(`you have been credited ${transactions[i]}`);
+    }
+        
+    }
 
 
+console.log(`The total debit is ${debit}`);
+console.log(`The total credit is ${credit}`);  
+console.log(`your account balance is ${savings}`);
 
-//arraysggg
+
+// filter, find, map, forEach
+// higher order function, callback func
+const friends = ["John", "Jane", "Adam", "Jennifer", "Owen"];
+friends.includes("Lestar");
+
+friends.forEach((friend, index) => {
+console.log(`${index} The name of my friend is ${friend}`);
+});
+
+friends.forEach((f, index) => {
+    console.log((f, index));
+});
+
+
+//Map
+friends.map((val) => {
+    if (val === "Jane") {
+        console.log(`${val} is my best friend`);
+    } else {
+        console.log(`${val} is just my friend`);
+    }
+});
+
+friends.map((val) => {
+    if (val === "Jennifer") {
+        console.log(`${val} is my bestie`);
+    } else {
+        console.log(`${val} is just a friend`);
+        }
+});
+
+//filter find
+
+const filteredFriends = friends.filter((friend) => {
+    return friend.length > 6;
+});
+console.log(filteredFriends);
+
+//Find
+
+const foundUser = friends.find((friend) => {
+    return friend.startsWith("J");
+});
+console.log(foundUser);
+
+const result = friends.filter((friend) => friend.length > 6);
+const result2 = friends.find((f) => f.startsWith("A"));
+
+console.log(result, result2);
+
 //object
 //asybchronous
 //Dom
